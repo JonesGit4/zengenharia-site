@@ -47,7 +47,7 @@ const cases = [
     ],
     category: "Reforma",
   },
-  {
+  /* {
     id: 4,
     title: "Shopping Center Metropolitano",
     location: "Brasília, DF",
@@ -91,7 +91,7 @@ const cases = [
       "Parceria público-privada",
     ],
     category: "Recuperação",
-  },
+  }, */
 ];
 
 const Cases = () => {
