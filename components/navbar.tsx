@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "./ui/button";
 
@@ -19,22 +21,18 @@ const links = [
     href: "/#why-choose",
   },
   {
-    name: "Impacto Social",
-    href: "/#social-impact",
+    name: "FAQ",
+    href: "/#faq",
   },
   {
     name: "Conteúdo",
     href: "/#content",
   },
-  {
-    name: "FAQ",
-    href: "/#faq",
-  },
 ];
 
 const Navbar = () => {
   return (
-    <div className="absolute top-0 left-0 right-0 w-full border-b">
+    <div className="fixed top-0 left-0 right-0 w-full border-b bg-neutral-800/70 backdrop-blur-lg z-[9999]">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Image
           src="/logo.png"
@@ -53,7 +51,16 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button>Contato</Button>
+          <Button
+            onClick={() => {
+              window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth",
+              });
+            }}
+          >
+            Contato
+          </Button>
         </nav>
       </div>
     </div>

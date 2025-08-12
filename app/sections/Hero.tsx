@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
+import { ContactDialog } from "@/components/contact-dialog";
 import {
   BuildingIcon,
   ChevronRightIcon,
   MedalIcon,
   UsersRoundIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -22,13 +24,17 @@ const Hero = () => {
         modernização de edifícios.
       </p>
       <div className="flex gap-4 mt-8">
-        <Button size="xl" className="text-bold group">
-          Nossos Serviços{" "}
-          <ChevronRightIcon className="group-hover:translate-x-1 transition-all" />
-        </Button>
-        <Button size="xl" variant="outline">
-          Solicitar Orçamento
-        </Button>
+        <Link href="/#services">
+          <Button size="xl" className="text-bold group">
+            Nossos Serviços{" "}
+            <ChevronRightIcon className="group-hover:translate-x-1 transition-all" />
+          </Button>
+        </Link>
+        <ContactDialog>
+          <Button size="xl" variant="outline">
+            Solicitar Orçamento
+          </Button>
+        </ContactDialog>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 gap-x-14 mt-12">
         <div className="flex flex-col items-center justify-center text-center gap-y-4">
