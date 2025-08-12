@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="flex flex-col items-center justify-center w-full h-screen bg-neutral-900"
+      className="flex flex-col items-center justify-center pt-24 2xl:p-0 w-full h-screen bg-neutral-900"
     >
       <h1 className="text-2xl md:text-6xl 2xl:text-8xl font-extrabold text-foreground text-center">
         Transformando <br /> <span className="text-primary">Fachadas</span>{" "}
