@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ConfettiEffect from "@/components/confetti-effect";
+import WhatsAppFloat from "@/components/whatsapp-float-standalone";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,14 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <WhatsAppFloat
+            phoneNumber="5511999999999"
+            message="Olá! Gostaria de solicitar um orçamento para os serviços da Z Engenharia."
+            position="right"
+            companyName="Z Engenharia"
+            tooltipMessage="Precisa de ajuda? Fale conosco no WhatsApp!"
+            theme="auto"
+          />
         </ThemeProvider>
       </body>
     </html>
