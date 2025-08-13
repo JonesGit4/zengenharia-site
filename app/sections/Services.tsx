@@ -44,13 +44,13 @@ const services = [
   },
   {
     icon: ClipboardIcon,
-    title: "Consultoria Técnica",
-    desc: "Assessoria especializada para projetos de fachadas, laudos técnicos e aprovações junto aos órgãos competentes.",
+    title: "Tratamento de Trincas e Fissuras",
+    desc: "Identificação e reparo de trincas e fissuras para garantir a integridade estrutural da fachada.",
     items: [
-      "Laudos técnicos",
-      "Projetos executivos",
-      "Aprovações legais",
-      "Acompanhamento",
+      "Diagnóstico preciso",
+      "Reparos especializados",
+      "Prevenção futura",
+      "Acompanhamento pós-serviço",
     ],
   },
   {
