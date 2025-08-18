@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ConfettiEffect from "@/components/confetti-effect";
 import WhatsAppFloat from "@/components/whatsapp-float-standalone";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,12 +62,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Analytics />
           <ConfettiEffect />
           <Navbar />
           {children}
           <Footer />
           <WhatsAppFloat
-            phoneNumber="5511999999999"
+            phoneNumber="5531992184003"
             message="Olá! Gostaria de solicitar um orçamento para os serviços da Z Engenharia."
             position="right"
             companyName="Z Engenharia"
