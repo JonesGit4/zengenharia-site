@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { Phone } from "lucide-react";
 
 const links = [
   {
@@ -51,6 +52,13 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <a
+            href="tel:+5531992184003"
+            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+          >
+            <Phone className="w-4 h-4" />
+            <span className="text-sm font-medium">(31) 99218-4003</span>
+          </a>
           <Button
             onClick={() => {
               window.scrollTo({
