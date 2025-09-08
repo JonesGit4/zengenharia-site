@@ -22,6 +22,10 @@ const links = [
     href: "/#why-choose",
   },
   {
+    name: "Posts",
+    href: "/posts",
+  },
+  {
     name: "FAQ",
     href: "/#faq",
   },
