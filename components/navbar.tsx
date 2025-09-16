@@ -26,10 +26,7 @@ const links = [
     name: "FAQ",
     href: "/#faq",
   },
-  {
-    name: "Conteúdo",
-    href: "/#content",
-  },
+  
 ];
 
 const Navbar = () => {
