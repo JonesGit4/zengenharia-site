@@ -7,6 +7,7 @@ import {
   MessageSquareIcon,
   PhoneIcon,
   MailIcon,
+  MapPinIcon,
 } from "lucide-react";
 
 export default function ReformaCondominioPage() {
