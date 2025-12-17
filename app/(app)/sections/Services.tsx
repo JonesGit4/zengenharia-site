@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import {
   WrenchIcon,
   ShieldIcon,
@@ -19,6 +20,7 @@ const services = [
       "Relatórios detalhados",
       "Suporte 24/7",
     ],
+    link: "/servicos/manutencao-predial",
   },
   {
     icon: ShieldIcon,
@@ -30,6 +32,7 @@ const services = [
       "Garantia estendida",
       "Técnicas modernas",
     ],
+    link: "/servicos/impermeabilizacao",
   },
   {
     icon: BuildingIcon,
@@ -41,6 +44,7 @@ const services = [
       "Equipe especializada",
       "Cronograma flexível",
     ],
+    link: "/servicos/reforma-de-fachada-predial",
   },
   {
     icon: ClipboardIcon,
@@ -52,6 +56,7 @@ const services = [
       "Prevenção futura",
       "Acompanhamento pós-serviço",
     ],
+    link: "/servicos/reforma-de-condominio",
   },
   {
     icon: HammerIcon,
@@ -63,6 +68,7 @@ const services = [
       "Normas técnicas",
       "Pós-obra",
     ],
+    link: "/servicos/reformas-estruturais",
   },
   {
     icon: CheckCircleIcon,
@@ -74,6 +80,7 @@ const services = [
       "Recomendações",
       "Plano de ação",
     ],
+    link: "/servicos/inspecao-e-laudos",
   },
 ];
 
@@ -121,9 +128,11 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
-              <Button className="mt-6 w-full" size="xl">
-                Saiba Mais
-              </Button>
+              <Link href={service.link}>
+                <Button className="mt-6 w-full" size="xl">
+                  Saiba Mais
+                </Button>
+              </Link>
             </div>
           );
         })}
