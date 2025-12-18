@@ -14,6 +14,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface ContactDialogProps {
   children: React.ReactNode;
@@ -36,14 +43,19 @@ export function ContactDialog({
   const [isOpen, setIsOpen] = useState(false);
 
   const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
+    }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      servicos: value,
     }));
   };
 
@@ -153,24 +165,35 @@ export function ContactDialog({
 
           <div className="space-y-2">
             <Label htmlFor="servicos">Serviços de Interesse</Label>
-            <select
-              id="servicos"
-              name="servicos"
+            <Select
               value={formData.servicos}
-              onChange={handleInputChange}
-              className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+              onValueChange={handleSelectChange}
             >
-              <option value="">Selecione um serviço</option>
-              <option value="manutencao-predial">Manutenção Predial</option>
-              <option value="impermeabilizacao">Impermeabilização</option>
-              <option value="restauracao-fachadas">
-                Restauração de Fachadas
-              </option>
-              <option value="consultoria-tecnica">Consultoria Técnica</option>
-              <option value="reformas-estruturais">Reformas Estruturais</option>
-              <option value="inspecao-laudos">Inspeção e Laudos</option>
-              <option value="outros">Outros</option>
-            </select>
+              <SelectTrigger>
+                <SelectValue placeholder="Selecione um serviço" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="manutencao-predial">
+                  Manutenção Predial
+                </SelectItem>
+                <SelectItem value="impermeabilizacao">
+                  Impermeabilização
+                </SelectItem>
+                <SelectItem value="restauracao-fachadas">
+                  Restauração de Fachadas
+                </SelectItem>
+                <SelectItem value="consultoria-tecnica">
+                  Consultoria Técnica
+                </SelectItem>
+                <SelectItem value="reformas-estruturais">
+                  Reformas Estruturais
+                </SelectItem>
+                <SelectItem value="inspecao-laudos">
+                  Inspeção e Laudos
+                </SelectItem>
+                <SelectItem value="outros">Outros</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="space-y-2">
