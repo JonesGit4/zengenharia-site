@@ -133,7 +133,7 @@ const FAQ = () => {
             <Button
               size="lg"
               variant="outline"
-              className="flex items-center gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="flex items-center gap-2 border-primary text-primary hover:text-primary hover:bg-primary"
             >
               <Phone className="w-5 h-5" />
               Solicitar Orçamento
@@ -146,3 +146,4 @@ const FAQ = () => {
 };
 
 export default FAQ;
+ 
