@@ -104,7 +104,11 @@ export default function ReformasEstruturaisPage() {
               </Button>
             </ContactDialog>
             <Button size="lg" variant="outline" className="text-base" asChild>
-              <a href="https://wa.me/+5531992184003" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://wa.me/+5531992184003"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <MailIcon className="w-4 h-4 mr-2" />
                 Fale Conosco
               </a>
