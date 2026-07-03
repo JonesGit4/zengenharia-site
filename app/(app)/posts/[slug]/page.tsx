@@ -303,21 +303,26 @@ export default async function PostPage({ params }: PostPageProps) {
 
 // Generate static params for build time
 export async function generateStaticParams() {
-  const payload = await getPayload({ config });
+  try {
+    const payload = await getPayload({ config });
 
-  const posts = await payload.find({
-    collection: "posts",
-    where: {
-      status: {
-        equals: "published",
+    const posts = await payload.find({
+      collection: "posts",
+      where: {
+        status: {
+          equals: "published",
+        },
       },
-    },
-    limit: 100, // Adjust based on your needs
-  });
+      limit: 100,
+    });
 
-  return posts.docs.map((post) => ({
-    slug: post.slug,
-  }));
+    return posts.docs.map((post) => ({
+      slug: post.slug,
+    }));
+  } catch (error) {
+    console.warn('generateStaticParams: Payload indisponível no build, retornando []');
+    return [];
+  }
 }
 
 // Generate metadata for SEO
