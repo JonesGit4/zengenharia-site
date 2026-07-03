@@ -8,6 +8,8 @@ import Footer from "@/components/footer";
 import ConfettiEffect from "@/components/confetti-effect";
 import WhatsAppFloat from "@/components/whatsapp-float-standalone";
 import { Analytics } from "@vercel/analytics/next";
+import { LocalBusinessSchema } from "@/components/SchemaOrg";
+import { defaultMetadata } from "@/lib/metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,10 +21,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Z Engenharia",
-  description: "Site oficial da Z Engenharia.",
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
@@ -79,6 +78,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Analytics />
+          <LocalBusinessSchema />
           <ConfettiEffect />
           <Navbar />
           {children}
