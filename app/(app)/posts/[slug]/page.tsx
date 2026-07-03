@@ -8,6 +8,8 @@ import { ptBR } from "date-fns/locale";
 import { Post, Media, User } from "@/payload-types";
 import { RichTextContent } from "@/components/rich-text-content";
 
+export const dynamic = 'force-dynamic';
+
 interface PostWithRelations extends Omit<Post, "featuredImage" | "author"> {
   featuredImage?: Media | string | null;
   author?: User | string | null;

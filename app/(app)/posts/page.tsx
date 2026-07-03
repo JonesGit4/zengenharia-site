@@ -6,6 +6,8 @@ import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { Post } from "@/payload-types";
 
+export const dynamic = 'force-dynamic';
+
 interface PostsPageProps {
   searchParams?: Promise<{
     page?: string;
